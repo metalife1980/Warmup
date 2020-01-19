@@ -27,17 +27,16 @@ public class JumpingOnTheClouds {
 
         int noOfJumps=0;
         for (int i=0; i<c.length;){
-            if (i+1>=c.length || i+2>=c.length)
-                break;
-            if (  c[i+2] == 0 ){
+            if ( i+2< c.length && c[i+2] == 0 ){
                 i+=2;
                 noOfJumps++;
-            }else if (c[i+1] == 0 ){
+            }else if ( i+1< c.length && c[i+1] == 0 ){
                 i+=1;
                 noOfJumps++;
+            }else{
+                break;
             }
         }
-
         return noOfJumps;
     }
 
